@@ -96,5 +96,10 @@
     margin-bottom: -15%;
     color: #495057;
 }
+.discount-label{
+    font-size: 10px!important;
+    font-style: italic!important;
+    color: #495057!important;
+}
 
 

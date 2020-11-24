@@ -6,9 +6,11 @@
 package com.mycompany.mycart.userdao;
 
 import com.mycompany.mycart.entities.product;
+import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 /**
  *
@@ -36,5 +38,19 @@ public class ProductDao {
             f = false;
         }
         return f;
+    }
+    
+    public List<product> getAllProducts(){
+        Session s=this.factory.openSession();
+        Query q=s.createQuery("from product");
+        List<product> list=q.list();
+        return list;
+    }
+    public List<product> getAllProductsById(int cid){
+        Session s=this.factory.openSession();
+        Query q=s.createQuery("from product as p where p.categori.categoryId=:id ");
+        q.setParameter("id",cid);
+        List<product> list=q.list();
+        return list;
     }
 }

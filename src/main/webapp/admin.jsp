@@ -41,9 +41,10 @@
             background-image: linear-gradient(to bottom right,#90caf9,white);
             cursor: pointer;
         }
+       
     </style>
     <body>
-        <%@include file="Components/navbar.jsp" %>
+        <%@include file="Components/navbar.jsp" %><br><br><br>
 
         <div class="container mt-3">
             <%@include file="Components/message.jsp"%> 

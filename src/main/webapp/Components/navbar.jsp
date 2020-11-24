@@ -5,6 +5,9 @@
     User user1 = (User) session.getAttribute("current-user");
 
 %>
+
+    
+    
 <nav class="navbar navbar-expand-lg custom-bg navbar-dark">
     <div class="container">
         <a class="navbar-brand" href="index.jsp">SAHARA</a>
@@ -28,11 +31,11 @@
                         <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </li>
-
+                <li class="nav-item active" style="padding-left: 580px;"><a class="nav-link" href="#!" data-toggle="modal" data-target="#cart" style="font-size:16px;"><i class="fa fa-cart-plus" style="font-size: 25px;"></i><span class="cart-items">(0)</span></a></li>
                 <%-- displaying login and logout button --%>
                 <%                    if (user1 == null) {
                 %>
-                <li class="nav-item active" style="padding-left: 580px;"><a class="nav-link" href="register.jsp" ><i class="fas fa-user"></i>&nbsp;Register</a></li>
+                <li class="nav-item active" style="padding-left: 10px;"><a class="nav-link mt-0" href="register.jsp" ><i class="fas fa-user"></i>&nbsp;Register</a></li>
                 <li class="nav-item active " style="padding-left: 10px;"><a class="nav-link" href="login.jsp"><i class='fas fa-sign-in-alt'></i> Login</a></li>
                     <%
                     } else {

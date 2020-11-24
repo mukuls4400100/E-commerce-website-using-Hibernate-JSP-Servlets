@@ -35,6 +35,7 @@ public class RegisterServlet extends HttpServlet {
                 //save data using hibernet
                 Session hibernetSession = FactoryProvider.getFactory().openSession();
                 Transaction tx = hibernetSession.beginTransaction();
+                
                 int userId = (int) hibernetSession.save(user);
                 tx.commit();
                 hibernetSession.close();

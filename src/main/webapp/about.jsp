@@ -8,5 +8,6 @@
     <body>
         <%@include file="Components/navbar.jsp" %>
         <h1>Hello World!</h1>
+        <%@include file="Components/common_modals.jsp" %>
     </body>
 </html>

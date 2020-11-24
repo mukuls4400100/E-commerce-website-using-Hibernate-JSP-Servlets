@@ -106,5 +106,10 @@ public class product {
     public String toString() {
         return "product{" + "pId=" + pId + ", pName=" + pName + ", pDesc=" + pDesc + ", pPhoto=" + pPhoto + ", pPrice=" + pPrice + ", pDiscount=" + pDiscount + ", pQuantity=" + pQuantity + '}';
     }
+    
+    public int getPriceAfterDiscount(){
+        int d=(int)((this.getpDiscount()/100.0)*this.getpPrice());
+        return this.getpPrice()-d;
+    }
    
 }
