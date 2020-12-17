@@ -7,10 +7,11 @@
 %>
 
     
-    
+
 <nav class="navbar navbar-expand-lg custom-bg navbar-dark">
     <div class="container">
-        <a class="navbar-brand" href="index.jsp">SAHARA</a>
+        
+        <a class="navbar-brand" href="index.jsp" style="font-size: 22px; font-weight: bold;">SAHARA</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -20,18 +21,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.jsp">Home&nbsp;&nbsp;</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Categories
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item active" style="padding-left: 580px;"><a class="nav-link" href="#!" data-toggle="modal" data-target="#cart" style="font-size:16px;"><i class="fa fa-cart-plus" style="font-size: 25px;"></i><span class="cart-items">(0)</span></a></li>
+                
+                <li class="nav-item active" style="padding-left: 680px;"><a class="nav-link" href="#!" data-toggle="modal" data-target="#cart" style="font-size:16px; min-width: 60px;"><i class="fa fa-cart-plus" style="font-size: 25px;"></i><span class="cart-items">(0)</span></a></li>
                 <%-- displaying login and logout button --%>
                 <%                    if (user1 == null) {
                 %>
@@ -40,8 +31,8 @@
                     <%
                     } else {
                     %>
-                <li class="nav-item active " style="padding-left: 580px;"><a class="nav-link" href="#">Hi <%= user1.getUserName()%></a></li>
-                <li class="nav-item active" style="padding-left: 10px;"><a class="nav-link" href="LogoutServlet" ><i class="fas fa-sign-in-alt"></i>&nbsp;LogOut</a></li>
+                <li class="nav-item active " style="padding-left: 10px;"><a class="nav-link" href="<%=user1.getUserType().equals("admin")?"admin.jsp":"index.jsp"%>" style="min-width: 140px;">Hi <%= user1.getUserName()%></a></li>
+                <li class="nav-item active" style="padding-left: 10px;"><a class="nav-link" href="LogoutServlet" style="min-width: 90px;"><i class="fas fa-sign-in-alt"></i>&nbsp;LogOut</a></li>
                     <%
                         }
                     %>

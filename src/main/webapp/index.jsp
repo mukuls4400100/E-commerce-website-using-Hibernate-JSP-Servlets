@@ -7,6 +7,7 @@
 <%@page import="com.mycompany.mycart.helper.FactoryProvider"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="Components/common_css_js.jsp"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -49,14 +50,11 @@
                 cursor: pointer;
             }
         </style>
-        <script>
-            function myFunction() {
-                document.getElementById("myDiv").style.backgroundColor = "red";
-            }
-        </script>
+        
 
     </head>
     <body>
+       
         <%@include file="Components/navbar.jsp" %><br><br>
         <%@include file="Components/common_modals.jsp" %>
         <div class="row mt-0 mx-2">

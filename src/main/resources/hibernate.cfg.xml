@@ -13,5 +13,6 @@
         <mapping class="com.mycompany.mycart.entities.User"/>
         <mapping class="com.mycompany.mycart.entities.category"/>
         <mapping class="com.mycompany.mycart.entities.product"/>  
+        <mapping class="com.mycompany.mycart.entities.order"/>  
     </session-factory>
 </hibernate-configuration>

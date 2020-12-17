@@ -1,3 +1,4 @@
+<%@page import="java.util.Map"%>
 <%@page import="java.util.List"%>
 <%@page import="com.mycompany.mycart.entities.category"%>
 <%@page import="com.mycompany.mycart.helper.FactoryProvider"%>
@@ -27,7 +28,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>admin page</title>
-    </head>
+   
 
     <style>
         .admin .card{
@@ -41,14 +42,21 @@
             background-image: linear-gradient(to bottom right,#90caf9,white);
             cursor: pointer;
         }
-       
+
     </style>
+     </head>
     <body>
         <%@include file="Components/navbar.jsp" %><br><br><br>
 
         <div class="container mt-3">
             <%@include file="Components/message.jsp"%> 
         </div>
+
+        <%                                CategoryDao categorydao = new CategoryDao(FactoryProvider.getFactory());
+            List<category> list = categorydao.getCategories();
+
+            Map<String, Long> m = FactoryProvider.getCount(FactoryProvider.getFactory());
+        %>
 
         <%-- start category-pannel --%>
         <div class="container my-5  z-depth-1 px-0 rounded " style="background-color: white; color: black">  
@@ -60,7 +68,7 @@
                 <div class="col-md-4 mb-4" id="bg">
                     <div class="row" >
                         <div class="col-6 pr-0">
-                            <h4 class="display-4 text-right mb-0 count-up" data-from="0" data-to="42" data-time="2000">42</h4>
+                            <h4 class="display-4 text-right mb-0 count-up" data-from="0" data-to="42" data-time="2000"><%=m.get("userCount")%></h4>
                         </div>
 
                         <div class="col-6">
@@ -71,11 +79,12 @@
                     </div>
                 </div>
 
+
                 <%-- current-categories--%>
                 <div class="col-md-4 mb-4" id="bg">
                     <div class="row" >
                         <div class="col-6 pr-0">
-                            <h4 class="display-4 text-right mb-0 count1" data-from="0" data-to="3500" data-time="2000">3,500</h4>
+                            <h4 class="display-4 text-right mb-0 count1" data-from="0" data-to="3500" data-time="2000"><%=list.size()%></h4>
                         </div>
 
                         <div class="col-6">
@@ -90,7 +99,7 @@
                 <div class="col-md-4 mb-4"id="bg">
                     <div class="row" >
                         <div class="col-6 pr-0">
-                            <h4 class="display-4 text-right">244</h4>
+                            <h4 class="display-4 text-right"><%=m.get("productCount")%></h4>
                         </div>
 
                         <div class="col-6">
@@ -204,8 +213,8 @@
                             </div>
 
                             <!-- get categories -->
-                            <%                                CategoryDao categorydao = new CategoryDao(FactoryProvider.getFactory());
-                                List<category> list = categorydao.getCategories();
+                            <%
+                                list = categorydao.getCategories();
                             %>
                             <%-- getting dynamic values of categories from database --%>
                             <div class="form-group">
@@ -237,5 +246,6 @@
 
 
         <!-- End product Modal -->
+        <%@include file="Components/common_modals.jsp" %>
     </body>
 </html>
